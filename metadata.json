@@ -1,0 +1,11 @@
+{
+  "name": "rdev5-windowsciphers",
+  "version": "1.0.0",
+  "author": "Matt Borja",
+  "license": "MIT",
+  "summary": "Configures Microsoft Schannel and cipher suite selection for ensuring compliance on Windows servers.",
+  "source": "https://github.com/puppetlabs/puppetlabs-ntp",
+  "dependencies": [
+    { "name":"puppetlabs/registry","version_requirement":">= 1.1.4" }
+  ]
+}
