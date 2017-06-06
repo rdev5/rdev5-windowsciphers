@@ -1,7 +1,12 @@
 # Disables protocol for both client and server in HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 define windowsciphers::protocol::disable($protocol) {
-	windowsciphers::protocol::server::disable($protocol)
-	windowsciphers::protocol::client::disable($protocol)
+	windowsciphers::protocol::server::disable { $protocol:
+		protocol => $protocol
+	}
+
+	windowsciphers::protocol::client::disable { $protocol:
+		protocol => $protocol
+	}
 }
 
 define windowsciphers::protocol::server::disable($protocol) {
