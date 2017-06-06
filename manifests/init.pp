@@ -66,7 +66,6 @@ class windowsciphers::disable (
 		"Triple DES 168"
 	]
 
-	# Sets OS ciphers suites in SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002
 	$cipher_suite = [
 		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521",
 		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384",
