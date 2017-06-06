@@ -12,7 +12,7 @@ mod 'rdev5-windowsciphers',
 ### Disable TLS 1.0, Tripe DES (SWEET32) and 128-bit ciphers
 The following parameters may be passed to `windowsciphers::disable` to disable TLS 1.0, Triple DES, and 128-bit ciphers:
 ````
-$schannel_protocols = ["Multi-Protocol Unified Hello", PCT 1.0", "SSL 2.0", "SSL 3.0", "TLS 1.0"]
+$schannel_protocols = ["Multi-Protocol Unified Hello", "PCT 1.0", "SSL 2.0", "SSL 3.0", "TLS 1.0"]
 
 $schannel_ciphers = [
 	"NULL",
