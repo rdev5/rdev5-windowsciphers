@@ -119,16 +119,6 @@ define windowsciphers::schannel::protocol::disable($protocol) {
 	}
 }
 
-define windowsciphers::schannel::protocol::enable($protocol) {
-	windowsciphers::schannel::protocol::server::enable { $protocol:
-		protocol => $protocol
-	}
-
-	windowsciphers::schannel::protocol::client::enable { $protocol:
-		protocol => $protocol
-	}
-}
-
 define windowsciphers::schannel::protocol::server::enable($protocol) {
 	registry_value { "HKLM\\System\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\${protocol}\\Server\\Enabled":
 		ensure => present,
