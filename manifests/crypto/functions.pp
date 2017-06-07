@@ -1,4 +1,4 @@
-class windowsciphers::crypto::functions::set ($functions = []) {
+class windowsciphers::crypto::functions ($functions = []) {
 	validate_array($functions)
 
 	if length($functions) > 0 {

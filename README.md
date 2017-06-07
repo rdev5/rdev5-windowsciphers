@@ -39,9 +39,9 @@ windowsciphers::schannel::enable { 'Enable Schannels':
 ````
 
 ### Cryptography Cipher Suites
-To set the following cipher suites in their respective order, use `windowsciphers::crypto::functions::set`:
+To set the following cipher suites in their respective order, use `windowsciphers::crypto::functions`:
 ````
-windowsciphers::crypto::functions::set { 'Cipher Suites':
+windowsciphers::crypto::functions { 'Cipher Suites':
 	$functions => [
 		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521",
 		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384",
