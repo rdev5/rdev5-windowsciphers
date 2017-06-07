@@ -32,7 +32,7 @@ windowsciphers::schannel::disable { 'Profile Name':
 ````
 
 ### Cryptography Cipher Suites
-To set the following cipher suites, use `windowsciphers::crypto::functions::set`:
+To set the following cipher suites in their respective order, use `windowsciphers::crypto::functions::set`:
 ````
 windowsciphers::crypto::functions::set { 'Cipher Suites':
 	$functions => [
