@@ -31,7 +31,7 @@ windowsciphers::schannel::disable { 'Disable Schannels':
 }
 
 windowsciphers::schannel::enable { 'Enable Schannels':
-	$keyAlgorithms => ["Diffie-Hellman", "PKCS", "ECDH"],
+	$key_algorithms => ["Diffie-Hellman", "PKCS", "ECDH"],
 	$hashes => ["MD5", "SHA", "SHA256", "SHA384", "SHA512"],
 	$protocols => ["TLS 1.1", "TLS 1.2"],
 	$ciphers => ["AES 128/128", "AES 256/256"],
