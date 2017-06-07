@@ -78,6 +78,16 @@ define windowsciphers::schannel::protocol::client::disable($protocol) {
 	}
 }
 
+define windowsciphers::schannel::protocol::disable($protocol) {
+	windowsciphers::schannel::protocol::server::disable { $protocol:
+		protocol => $protocol
+	}
+
+	windowsciphers::schannel::protocol::client::disable { $protocol:
+		protocol => $protocol
+	}
+}
+
 define windowsciphers::schannel::protocol::enable($protocol) {
 	windowsciphers::schannel::protocol::server::enable { $protocol:
 		protocol => $protocol
@@ -116,12 +126,12 @@ define windowsciphers::schannel::protocol::client::enable($protocol) {
 	}
 }
 
-define windowsciphers::schannel::protocol::disable($protocol) {
-	windowsciphers::schannel::protocol::server::disable { $protocol:
+define windowsciphers::schannel::protocol::enable($protocol) {
+	windowsciphers::schannel::protocol::server::enable { $protocol:
 		protocol => $protocol
 	}
 
-	windowsciphers::schannel::protocol::client::disable { $protocol:
+	windowsciphers::schannel::protocol::client::enable { $protocol:
 		protocol => $protocol
 	}
 }
