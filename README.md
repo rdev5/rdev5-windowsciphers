@@ -6,7 +6,7 @@ To use this module, add this declaration to your Puppetfile:
 ````
 mod 'rdev5-windowsciphers',
 :git => 'https://github.com/rdev5/rdev5-windowsciphers.git',
-:commit => '3d80cfe'
+:commit => '1ca6b58'
 ````
 
 ## Profiles
