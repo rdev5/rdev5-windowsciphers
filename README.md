@@ -10,10 +10,10 @@ mod 'rdev5-windowsciphers',
 ````
 
 ## Profiles
-### Disable TLS 1.0, Tripe DES (SWEET32) and other 128-bit ciphers
-The following parameters may be passed to `windowsciphers::schannel::disable` to disable TLS 1.0, Triple DES, and 128-bit ciphers:
+### PCI 3.1 + SWEET32 Fix
+Disables TLS 1.0, Triple DES, and < 128-bit ciphers:
 ````
-windowsciphers::schannel::disable { 'Profile Name':
+windowsciphers::schannel::disable { 'Disable Schannels':
 	$protocols => ["Multi-Protocol Unified Hello", "PCT 1.0", "SSL 2.0", "SSL 3.0", "TLS 1.0"],
 
 	$ciphers => [
@@ -28,6 +28,13 @@ windowsciphers::schannel::disable { 'Profile Name':
 		"RC4 128/128",
 		"Triple DES 168"
 	],
+}
+
+windowsciphers::schannel::enable { 'Enable Schannels':
+	$keyAlgorithms => ["Diffie-Hellman", "PKCS", "ECDH"],
+	$hashes => ["MD5", "SHA", "SHA256", "SHA384", "SHA512"],
+	$protocols => ["TLS 1.1", "TLS 1.2"],
+	$ciphers => ["AES 128/128", "AES 256/256"],
 }
 ````
 
