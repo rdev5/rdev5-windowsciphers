@@ -2,22 +2,28 @@ class windowsciphers () {
 	class { 'registry': }
 }
 
-class windowsciphers::disable ($schannel_protocols = [], $schannel_ciphers = [], $schannel_hashes = []) {
-	$schannel_protocols.each |$protocol| {
-		windowsciphers::protocol::disable { $protocol:
+class windowsciphers::schannel::disable ($protocols = [], $ciphers = [], $hashes = [], $keyAlgorithms = []) {
+	$protocols.each |$protocol| {
+		windowsciphers::schannel::protocol::disable { $protocol:
 			protocol => $protocol
 		}
 	}
 
-	$schannel_ciphers.each |$cipher| {
-		windowsciphers::cipher::disable { $cipher:
+	$ciphers.each |$cipher| {
+		windowsciphers::schannel::cipher::disable { $cipher:
 			cipher => $cipher
 		}
 	}
 
-	$schannel_hashes.each |$hash| {
-		windowsciphers::hash::disable { $hash:
+	$hashes.each |$hash| {
+		windowsciphers::schannel::hash::disable { $hash:
 			hash => $hash
+		}
+	}
+
+	$keyAlgorithms.each |$algorithm| {
+		windowsciphers::schannel::key_exchange::disable { $algorithm:
+			algorithm => $algorithm
 		}
 	}
 }
