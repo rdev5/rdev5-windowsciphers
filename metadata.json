@@ -6,6 +6,7 @@
   "license": "MIT",
   "source": "https://github.com/puppetlabs/puppetlabs-ntp",
   "dependencies": [
+    { "name":"puppetlabs/stdlib","version_requirement":">= 4.13.1 < 5.0.0" },
     { "name":"puppetlabs/registry","version_requirement":">= 1.1.4" }
   ],
   "operatingsystem_support": [
