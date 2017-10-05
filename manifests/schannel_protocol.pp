@@ -1,4 +1,4 @@
-# TODO: Refactor into helpers and cleanup
+# TODO: Refactor into separate functions
 define windowsciphers::schannel_protocol($enable_protocol = undef, $disable_protocol = undef) {
 	if $disable_protocol != undef {
 		$disable_server_protocol_key = "HKLM\\System\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\${disable_protocol}\\Server"
