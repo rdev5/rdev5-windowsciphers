@@ -1,4 +1,4 @@
-class windowsciphers::schannel::enable ($protocols = [], $ciphers = [], $hashes = [], $key_algorithms = []) {
+class windowsciphers::schannel::enable ($protocols = [], $ciphers = [], $hashes = [], $key_algorithms = [], $copyToClient = false) {
 	validate_array($protocols)
 	validate_array($ciphers)
 	validate_array($hashes)
@@ -24,7 +24,8 @@ class windowsciphers::schannel::enable ($protocols = [], $ciphers = [], $hashes 
 
 	$protocols.each |$protocol| {
 		windowsciphers::schannel_protocol { "Enable ${protocol}":
-			enable_protocol => $protocol
+			enable_protocol => $protocol,
+			copyToClient => $copyToClient,
 		}
 	}
 }
